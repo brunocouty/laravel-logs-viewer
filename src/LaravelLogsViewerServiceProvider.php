@@ -9,10 +9,9 @@ class LaravelLogsViewerServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-//        Publish config files
+//        Publish the views
         $this->publishes([
-            __DIR__ . '/resources/config/logs-viewer.php' => config_path('logs-viewer.php'),
-            __DIR__ . '/resources/views/' => resource_path("/views/"),
+            __DIR__.'/resources/views/' => resource_path('views'),
         ]);
 //        Reference path to resources
         $this->loadRoutesFrom(__DIR__.'/routes.php');
