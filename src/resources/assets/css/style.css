@@ -1,0 +1,37 @@
+body {
+    background: #F5F5F5;
+}
+.container {
+    background: #FFF;
+}
+.word-wrap {
+    word-wrap: break-word;
+}
+
+.title-bar {
+    font-weight: bold;
+    border-bottom: solid 2px #999;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.log-line {
+    border-bottom: solid 1px #999;
+    padding-top: 8px;padding-bottom: 10px;
+}
+.log-line:hover {
+    background: #F5F5F5;
+}
+.log-line:first-child {
+    padding-top: 20px;
+}
+
+.btn-download {
+    font-size: 18px;
+}
+
+.footer {
+    border-top: solid 2px #A94442;
+    color: #A94442;
+    padding: 10px;
+}
