@@ -24,9 +24,9 @@ Download result, simple and fast!
 
 [<- Back](../readme.md)
 
-[img-01]: docs/images/laravel-logs-viewer-01.png "Home Laravel Logs Viewer"
-[img-02]: docs/images/laravel-logs-viewer-02.png "Laravel Logs Viewer Results"
-[img-03]: docs/images/laravel-logs-viewer-03.png "Log details + stack trace"
-[img-04]: docs/images/laravel-logs-viewer-04.png "Paginated results"
-[img-05]: docs/images/laravel-logs-viewer-05.png "You can download the log file"
-[img-06]: docs/images/laravel-logs-viewer-06.png "File downloaded"
+[img-01]: images/laravel-logs-viewer-01.png "Home Laravel Logs Viewer"
+[img-02]: images/laravel-logs-viewer-02.png "Laravel Logs Viewer Results"
+[img-03]: images/laravel-logs-viewer-03.png "Log details + stack trace"
+[img-04]: images/laravel-logs-viewer-04.png "Paginated results"
+[img-05]: images/laravel-logs-viewer-05.png "You can download the log file"
+[img-06]: images/laravel-logs-viewer-06.png "File downloaded"
