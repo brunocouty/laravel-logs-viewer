@@ -26,7 +26,7 @@ php artisan vendor:publish --tag=public
 
 ### Usage
 
-To use this library, you need access the route "***/logs***" in your application.
+To use this library, you need access the route "*/logs*" in your application.
 
 ```php
 http://127.0.0.1:8000/logs
