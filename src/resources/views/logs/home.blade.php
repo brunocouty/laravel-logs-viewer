@@ -241,32 +241,79 @@
                             @if(array_key_exists('content', $log))
                                 {{ $log['content'] }}
                             @else
-                                {{ $log['stack_trace'][1] }}
+                                @if(array_key_exists('stack_trace', $log))
+                                    {{ $log['stack_trace'][1] }}
+                                @endif
                             @endif
                         </a>
                     </div>
-                    <div class="modal fade" id="modal_{{$key}}" tabindex="-1" role="dialog"
-                         aria-labelledby="myModalLabel">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                                aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">
-                                        Stack Trace
-                                    </h4>
-                                </div>
-                                <div class="modal-body word-wrap">
-                                    @foreach($log['stack_trace'] as $key => $line)
-                                        {{ $line }}<br/>
-                                    @endforeach
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    @if(array_key_exists('stack_trace', $log))
+                        <div class="modal fade" id="modal_{{$key}}" tabindex="-1" role="dialog"
+                             aria-labelledby="myModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close"><span
+                                                    aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title text-danger" id="myModalLabel">
+                                            Stack Trace
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body word-wrap">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <span class="glyphicon glyphicon-calendar text-danger" aria-hidden="true"></span>
+                                                @if(array_key_exists('date', $log))
+                                                    {{ $log['date'] }}
+                                                @else
+                                                    -
+                                                @endif
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="glyphicon glyphicon-time text-danger" aria-hidden="true"></span>
+                                                @if(array_key_exists('time', $log))
+                                                    {{ $log['time'] }}
+                                                @else
+                                                    -
+                                                @endif
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="glyphicon glyphicon-cloud text-danger" aria-hidden="true"></span>
+                                                @if(array_key_exists('env', $log))
+                                                    {{ $log['env'] }}
+                                                @else
+                                                    -
+                                                @endif
+                                            </div>
+                                            <div class="col-md-3 text-lowercase">
+                                                <span class="glyphicon glyphicon-flash text-danger" aria-hidden="true"></span>
+                                                @if(array_key_exists('type', $log))
+                                                    {{ $log['type'] }}
+                                                @else
+                                                    -
+                                                @endif
+                                            </div>
+                                        </div>
+                                        @if(array_key_exists('content', $log))
+                                            <br/>
+                                            <hr/>
+                                            {{ $log['content'] }}
+                                            <br/>
+                                            <hr/>
+                                        @endif
+                                        @foreach($log['stack_trace'] as $key => $line)
+                                            {{ $line }}<br/>
+                                        @endforeach
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 @endforeach
                 <div class="text-right">
                     {!! $logs->links() !!}
