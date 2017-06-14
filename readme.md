@@ -12,10 +12,16 @@ This library provider an friendly interface to view and analyze the logs from La
 composer require brunocouty/laravel-logs-viewer
 ```
 
-In your *config/app.php*, add the provider:
+In your *config/app.php*, add in "*provider*" array:
 
 ```php
 \BrunoCouty\LaravelLogsViewer\LaravelLogsViewerServiceProvider::class,
+```
+
+And add in '*aliases*' array:
+
+```php
+'LaravelLogsViewer' => \BrunoCouty\LaravelLogsViewer\LaravelLogsViewerFacade::class,
 ```
 
 You need publish the assets (*css and js files*):
@@ -24,12 +30,30 @@ You need publish the assets (*css and js files*):
 php artisan vendor:publish --tag=public
 ```
 
+In your *routes file*, add:
+
+```php
+LaravelLogsViewer::routes();
+```
+
+***Note:*** If you want protected your route with a middleware or group, use something like:
+
+```php
+Route::group(['prefix' => 'your-group', 'middleware' => 'auth'], function () {
+    LaravelLogsViewer::routes();
+});
+```
+
 ### Usage
 
 To use this library, you need access the route "*/logs*" in your application.
 
 ```php
 http://127.0.0.1:8000/logs
+
+// or
+
+http://127.0.0.1:8000/your-group/logs
 ```
 
 ### Customizing

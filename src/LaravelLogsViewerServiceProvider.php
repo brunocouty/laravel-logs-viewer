@@ -14,10 +14,8 @@ class LaravelLogsViewerServiceProvider extends ServiceProvider
             __DIR__.'/resources/views/' => resource_path('views'),
         ]);
 //        Reference path to resources
-        $this->loadRoutesFrom(__DIR__.'/routes.php');
         $this->loadViewsFrom(__DIR__.'/resources/views/logs', 'laravel-logs-viewer');
 //        Publish vendor assets
-//        To publish: php artisan vendor:publish --tag=public
         $this->publishes([
             __DIR__ . '/resources/assets/' => public_path("/vendor/laravel-logs-viewer"),
         ], 'public');
@@ -25,6 +23,8 @@ class LaravelLogsViewerServiceProvider extends ServiceProvider
 
     public function register()
     {
-
+        $this->app->bind('brunocouty-laravel-logs-viewer', function() {
+            return new LaravelLogsViewer;
+        });
     }
 }
