@@ -51,6 +51,8 @@ The view is in: "*resources/views/logs*".
 
 The css and js files are in: "*public/vendor/laravel-logs-viewer*".
 
+------------------------
+
 ## Like this content? Pay me a coffee!
 
 Yeah! You like of this package? Pay me a coffee and help me to keep this package updated!
