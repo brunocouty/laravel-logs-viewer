@@ -4,7 +4,7 @@ This library provider an friendly interface to view and analyze the logs from La
 
 ![alt text][img-01]
 
-[Click here to see more screenshots!](docs/images.md)
+[Click here to see MORE screenshots!](docs/images.md)
 
 ### Installation
 
@@ -15,13 +15,13 @@ composer require brunocouty/laravel-logs-viewer
 In your *config/app.php*, add in "*provider*" array:
 
 ```php
-\BrunoCouty\LaravelLogsViewer\LaravelLogsViewerServiceProvider::class,
+\BrunoCouty\LaravelViewLogs\LaravelLogsViewerServiceProvider::class,
 ```
 
 And add in '*aliases*' array:
 
 ```php
-'LaravelLogsViewer' => \BrunoCouty\LaravelLogsViewer\LaravelLogsViewerFacade::class,
+'LaravelLogsViewer' => \BrunoCouty\LaravelViewLogs\LaravelLogsViewerFacade::class,
 ```
 
 You need publish the assets (*css and js files*):

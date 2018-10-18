@@ -1,9 +1,16 @@
-body {
-    background: #F5F5F5;
+body, .modal-content {
+    background: #303030;
 }
+
+.bg-info {
+    background: #2A2A2A !important;
+}
+
 .container {
-    background: #FFF;
+    background: #333;
+    color: #FFF;
 }
+
 .word-wrap {
     word-wrap: break-word;
 }
@@ -17,13 +24,20 @@ body {
 
 .log-line {
     border-bottom: solid 1px #999;
-    padding-top: 8px;padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 10px;
 }
-.log-line:hover {
-    background: #F5F5F5;
+
+.log-line:hover, table.table-hover tr td:hover, .bg-danger:hover {
+    background: #2A2A2A;
 }
+
 .log-line:first-child {
     padding-top: 20px;
+}
+
+.bg-danger {
+    background: #D5715A !important;
 }
 
 .btn-download {
@@ -31,7 +45,34 @@ body {
 }
 
 .footer {
-    border-top: solid 2px #A94442;
-    color: #A94442;
+    border-top: solid 2px #BCD42B;
+    color: #BCD42B;
     padding: 10px;
+}
+
+a {
+    color: #4AB1B1 !important;
+}
+
+/*Pagination*/
+ul.pagination li {
+    background: #4AB1B1 !important;
+}
+.pagination > .disabled > span {
+    background: #4AB1B1 !important;
+    opacity: 0.3;
+    color: #FFF !important;
+}
+.pagination > .active > span, .pagination > li:last-child > a {
+    background: #4AB1B1 !important;
+    color: #FFF !important;
+}
+.pagination > li:last-child > a {
+    opacity: 0.9;
+}
+
+/*Close Modal*/
+.close-button {
+    background: #BCD42B !important;
+    color: #000;
 }

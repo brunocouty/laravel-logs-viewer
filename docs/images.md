@@ -17,9 +17,6 @@ Pagination done!
 ![alt text][img-05]
 Enable download of the log files.
 
-![alt text][img-06]
-Download result, simple and fast!
-
 -----------------
 
 [<- Back](../readme.md)

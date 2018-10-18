@@ -14,8 +14,14 @@
     <div class="row bg-info">
         <div class="col-md-12">
             <h1 class="text-danger">
-                Laravel Logs
-                <small>[ {{$fileActive}} ]</small>
+                <i>
+                    <i class="fa fa-files-o"></i>
+                    {{ config('app.name') }} Logs Viewer
+                    <small>[ {{$fileActive}} ]</small>
+                </i>
+                <span>
+
+                </span>
             </h1>
         </div>
     </div>
@@ -88,10 +94,13 @@
                 <tbody>
                 <tr>
                     <td>
-                        {{ config('app.log') }}
-                        <small class="pull-right">
+                        <i class="text-capitalize">
+                            {{ config('app.log') }}
+                        </i>
+                        <br>
+                        <small>
                             <i>
-                                (config/app.php)
+                                config/app.php
                             </i>
                         </small>
                     </td>
@@ -110,8 +119,11 @@
                 <tbody>
                 <tr>
                     <td>
-                        {{ config('app.log_level') }}
-                        <small class="pull-right">
+                        <i class="text-capitalize">
+                            {{ config('app.log_level') }}
+                        </i>
+                        <br>
+                        <small>
                             <i>
                                 (config/app.php)
                             </i>
@@ -131,10 +143,13 @@
                 <tbody>
                 <tr>
                     <td>
-                        {{ config('app.timezone') }}
-                        <small class="pull-right">
+                        <i>
+                            {{ config('app.timezone') }}
+                        </i>
+                        <br>
+                        <small>
                             <i>
-                                (config/app.php)
+                                config/app.php
                             </i>
                         </small>
                     </td>
@@ -152,10 +167,13 @@
                 <tbody>
                 <tr>
                     <td>
-                        {{ config('app.locale') }}
-                        <small class="pull-right">
+                        <i class="text-capitalize">
+                            {{ config('app.locale') }}
+                            </i>
+                        <br>
+                        <small>
                             <i>
-                                (config/app.php)
+                                config/app.php
                             </i>
                         </small>
                     </td>
@@ -173,10 +191,13 @@
                 <tbody>
                 <tr>
                     <td>
-                        {{ config('app.name') }}
-                        <small class="pull-right">
+                        <i>
+                            {{ config('app.name') }}
+                        </i>
+                        <br>
+                        <small>
                             <i>
-                                (config/app.php)
+                                config/app.php
                             </i>
                         </small>
                     </td>
@@ -257,13 +278,15 @@
                                                 aria-label="Close"><span
                                                     aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title text-danger" id="myModalLabel">
+                                            <i class="fa fa-map-marker"></i>
                                             Stack Trace
                                         </h4>
                                     </div>
                                     <div class="modal-body word-wrap">
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <span class="glyphicon glyphicon-calendar text-danger" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-calendar text-danger"
+                                                      aria-hidden="true"></span>
                                                 @if(array_key_exists('date', $log))
                                                     {{ $log['date'] }}
                                                 @else
@@ -271,7 +294,8 @@
                                                 @endif
                                             </div>
                                             <div class="col-md-3">
-                                                <span class="glyphicon glyphicon-time text-danger" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-time text-danger"
+                                                      aria-hidden="true"></span>
                                                 @if(array_key_exists('time', $log))
                                                     {{ $log['time'] }}
                                                 @else
@@ -279,7 +303,8 @@
                                                 @endif
                                             </div>
                                             <div class="col-md-3">
-                                                <span class="glyphicon glyphicon-cloud text-danger" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-cloud text-danger"
+                                                      aria-hidden="true"></span>
                                                 @if(array_key_exists('env', $log))
                                                     {{ $log['env'] }}
                                                 @else
@@ -287,7 +312,8 @@
                                                 @endif
                                             </div>
                                             <div class="col-md-3 text-lowercase">
-                                                <span class="glyphicon glyphicon-flash text-danger" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-flash text-danger"
+                                                      aria-hidden="true"></span>
                                                 @if(array_key_exists('type', $log))
                                                     {{ $log['type'] }}
                                                 @else
@@ -307,7 +333,9 @@
                                         @endforeach
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                                        <button type="button" class="btn btn-default close-button" data-dismiss="modal">
+                                            <i class="fa fa-check"></i>
+                                            Close
                                         </button>
                                     </div>
                                 </div>
