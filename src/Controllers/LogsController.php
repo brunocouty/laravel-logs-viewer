@@ -68,22 +68,38 @@ class LogsController extends Controller
         $file = file($this->logPath . '/' . $logFile);
         $logs = [];
         $count = 0;
-        foreach ($file as $line) {
-            if (substr($line, 0, 1) == '[') {
-                $data = explode(']', $line);
-                $datetime = explode(' ', substr($data[0], 1));
-                $types = explode(':', $data[1]);
-                $type = explode('.', $types[0]);
-                $logs[$count]['date'] = DateTime::createFromFormat('Y-m-d', $datetime[0])->format('Y-m-d');
-                $logs[$count]['time'] = $datetime[1];
-                $logs[$count]['env'] = $type[0];
-                $logs[$count]['type'] = $type[1];
-                $logs[$count]['content'] = substr($data[1], strpos($data[1], ':') + 2);
-                continue;
-            }
-            $logs[$count]['stack_trace'][] = $line;
-            if (strpos($line, '{main}') == 4) {
-                $count++;
+        foreach ($file as $key => $line) {
+            try {
+                if ($line == "[stacktrace]\n") {
+                    continue;
+                }
+                $test = substr($line, 0, 20);
+                $test = str_replace(['[', '-', ':', ' '], '', $test);
+                if (is_numeric($test)) {
+                    for ($i = 0; $i < strlen($line); $i++) {
+                        if(substr($line, $i, 1) == ']') {
+                            $data[0] = substr($line, 0, $i);
+                            $data[1] = substr($line, $i + 1);
+                            break;
+                        }
+                    }
+                    $datetime = explode(' ', substr($data[0], 1));
+                    $types = explode(':', $data[1]);
+                    $type = explode('.', $types[0]);
+                    $logs[$count]['date'] = DateTime::createFromFormat('Y-m-d', $datetime[0])->format('Y-m-d');
+                    $logs[$count]['time'] = $datetime[1];
+                    $logs[$count]['env'] = $type[0];
+                    $logs[$count]['type'] = $type[1];
+                    $logs[$count]['content'] = substr($data[1], strpos($data[1], ':') + 2);
+                    continue;
+                }
+                $logs[$count]['stack_trace'][] = $line;
+                if (strpos($line, '{main}') == 4) {
+                    $count++;
+                }
+            } catch (\Exception $exception) {
+                print_r("ERROR: " . $key);
+                dd("{$exception->getMessage()} - Line {$exception->getLine()}");
             }
         }
         $logs = array_reverse($logs);

@@ -242,7 +242,7 @@
                                 {{ $log['content'] }}
                             @else
                                 @if(array_key_exists('stack_trace', $log))
-                                    {{ $log['stack_trace'][1] }}
+                                    {{ $log['stack_trace'][0] }}
                                 @endif
                             @endif
                         </a>
