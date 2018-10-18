@@ -1,6 +1,6 @@
 <?php
 
-namespace BrunoCouty\LaravelLogsViewer;
+namespace BrunoCouty\LaravelViewLogs;
 
 use Illuminate\Support\Facades\Facade;
 

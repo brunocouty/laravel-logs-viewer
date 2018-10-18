@@ -1,8 +1,7 @@
 <?php
 
-namespace BrunoCouty\LaravelLogsViewer\Controllers;
+namespace BrunoCouty\LaravelViewLogs\Controllers;
 
-use App\Http\Controllers\Controller;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
