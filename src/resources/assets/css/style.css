@@ -58,6 +58,10 @@ a {
 ul.pagination li {
     background: #4AB1B1 !important;
 }
+
+.pagination > li:last-child > a, .pagination > li:first-child > a {
+    opacity: 0.9;
+}
 .pagination > .disabled > span {
     background: #4AB1B1 !important;
     opacity: 0.3;
@@ -66,9 +70,6 @@ ul.pagination li {
 .pagination > .active > span, .pagination > li:last-child > a {
     background: #4AB1B1 !important;
     color: #FFF !important;
-}
-.pagination > li:last-child > a {
-    opacity: 0.9;
 }
 
 /*Close Modal*/

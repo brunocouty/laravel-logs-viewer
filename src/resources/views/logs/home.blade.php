@@ -15,7 +15,7 @@
         <div class="col-md-12">
             <h1 class="text-danger">
                 <i>
-                    <i class="fa fa-files-o"></i>
+                    <i class="fa fa-heartbeat"></i>
                     {{ config('app.name') }} Logs Viewer
                     <small>[ {{$fileActive}} ]</small>
                 </i>
